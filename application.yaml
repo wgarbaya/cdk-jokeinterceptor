@@ -1,0 +1,11 @@
+kafkaSelector:
+  type: file
+  path: gateway-core/config/kafka.config
+interceptors:
+  - name: loggingInterceptor
+    pluginClass: fr.wgarbaya.cdk.ChuckInterceptorPlugin
+    timeoutMs: 30000 #optional, default timeoutMs = 30s
+    priority: 100
+    config: #Seems to be mandatory
+      - key: "dummy"
+        value: "useless"
